@@ -81,8 +81,6 @@
 {
     [super placeSubviews];
     
-    if (self.gifView.constraints.count) return;
-    
     self.gifView.frame = self.bounds;
     if (self.stateLabel.hidden && self.lastUpdatedTimeLabel.hidden) {
         self.gifView.contentMode = UIViewContentModeCenter;
@@ -109,8 +107,6 @@
             self.gifView.animationDuration = [self.stateDurations[@(state)] doubleValue];
             [self.gifView startAnimating];
         }
-    } else if (state == MJRefreshStateIdle) {
-        [self.gifView stopAnimating];
     }
 }
 @end
